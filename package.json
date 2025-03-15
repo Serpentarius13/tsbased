@@ -12,6 +12,7 @@
     "typescript",
     "tsbases"
   ],
+  "repository": "https://github.com/Serpentarius13/tsbased",
   "author": "Serpentarius13",
   "license": "ISC",
   "packageManager": "pnpm@10.5.1",
