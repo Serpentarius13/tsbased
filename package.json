@@ -1,13 +1,17 @@
 {
-  "name": "tsbases",
-  "version": "1.0.0",
-  "description": "",
+  "name": "tsbased",
+  "version": "0.0.2",
+  "description": "tsbased is a cli to get any config from tsconfig/bases repo for your new TypeScript project",
   "type": "module",
+  "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "typescript",
+    "tsbases"
+  ],
+  "author": "Serpentarius13",
   "license": "ISC",
   "packageManager": "pnpm@10.5.1",
   "dependencies": {
