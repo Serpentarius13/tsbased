@@ -85,6 +85,7 @@ async function main() {
     writeTo === "tsconfig" && fs.existsSync("./tsconfig.json")
       ? await confirm({
           message: "Would you want to overwrite tsconfig? DANGEROUS!",
+          default: false,
         })
       : true;
 
@@ -167,11 +168,22 @@ async function main() {
       case "tsconfig": {
         if (config.wouldOverwriteFile) {
           fs.writeFileSync("./tsconfig.json", await stringifyJson(json));
+        } else {
+          const useStdout = await confirm(
+            "You decided to not overwrite tsconfig. Still want to print to stdout?"
+          );
+
+          if (!useStdout) {
+            l.info("Okay. Exiting.");
+            process.exit(0);
+          }
+
+          stdout.write((await stringifyJson(json)) + "\n");
         }
         break;
       }
       case "stdout": {
-        stdout.write(await stringifyJson(json));
+        stdout.write((await stringifyJson(json)) + "\n");
         break;
       }
       default: {
