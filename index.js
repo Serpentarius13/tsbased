@@ -1,3 +1,5 @@
+#!/usr/bin/env -S node
+
 import { confirm, select } from "@inquirer/prompts";
 import redaxios from "redaxios";
 import fs from "fs";
