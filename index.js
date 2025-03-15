@@ -155,7 +155,7 @@ async function main() {
     }
     if (config.removeDescName) {
       for (const field of fieldsToRemove) {
-        delete config[field];
+        delete json[field];
       }
     }
 
