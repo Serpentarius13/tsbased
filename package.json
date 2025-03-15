@@ -1,6 +1,6 @@
 {
   "name": "tsbased",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "tsbased is a cli to get any config from tsconfig/bases repo for your new TypeScript project",
   "type": "module",
   "main": "./index.js",
