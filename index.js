@@ -174,9 +174,10 @@ async function main() {
         if (config.wouldOverwriteFile) {
           fs.writeFileSync("./tsconfig.json", await stringifyJson(json));
         } else {
-          const useStdout = await confirm(
-            "You decided to not overwrite tsconfig. Still want to print to stdout?"
-          );
+          const useStdout = await confirm({
+            message:
+              "You decided to not overwrite tsconfig. Still want to print to stdout?",
+          });
 
           if (!useStdout) {
             l.info("Okay. Exiting.");
