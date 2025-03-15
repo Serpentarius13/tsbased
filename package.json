@@ -1,0 +1,18 @@
+{
+  "name": "tsbases",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.5.1",
+  "dependencies": {
+    "@inquirer/prompts": "^7.4.0",
+    "comment-json": "^4.2.5",
+    "redaxios": "^0.5.1"
+  }
+}
