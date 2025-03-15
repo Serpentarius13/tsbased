@@ -52,12 +52,16 @@ const getFile = async (file) => {
     .then((r) => r.data);
 };
 
+const fieldsToRemove = ["display", "name", "_version", "docs"];
+
 async function main() {
   const getFilesPromise = getFiles();
 
   l.info("Hello, let's configure tsbase you're getting.");
   const removeDescName = await confirm({
-    message: "Want to remove name and description?",
+    message: `Want to remove unnecessary fields? (${fieldsToRemove.join(
+      ", "
+    )})`,
   });
   const keepSchemaReferenceUrl = await confirm({
     message: "Want to keep $schema url?",
@@ -150,8 +154,9 @@ async function main() {
       delete json["$schema"];
     }
     if (config.removeDescName) {
-      delete json.display;
-      delete json.name;
+      for (const field of fieldsToRemove) {
+        delete config[field];
+      }
     }
 
     const stringifyJson = async (json) => {
